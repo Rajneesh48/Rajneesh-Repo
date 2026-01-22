@@ -48,7 +48,7 @@
 
         android:layout_marginTop="10dp">
         <EditText
-            android:id="@+id/etPassword"
+            android:id="@+id/etPassword1"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@null"
@@ -63,7 +63,7 @@
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="10dp">
     <EditText
-        android:id="@+id/etConfirmPassword"
+        android:id="@+id/etConfirmPassword1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:inputType="numberPassword"

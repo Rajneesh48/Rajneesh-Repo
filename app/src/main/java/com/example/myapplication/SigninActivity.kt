@@ -1,49 +1,40 @@
 package com.example.myapplication
 
+import android.app.Activity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapplication.databinding.SigninPageBinding
 import com.google.android.material.button.MaterialButton
 
 class SigninActivity: AppCompatActivity() {
-    lateinit var etEmail: EditText
-    lateinit var etPassword: EditText
-
-    lateinit var btnSignIn: MaterialButton
-
+    lateinit var binding: SigninPageBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.signin_page)
+        binding = SigninPageBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        etEmail = findViewById(R.id.etEmail)
-        btnSignIn = findViewById(R.id.btnSignIn)
-        etPassword = findViewById(R.id.etPassword)
+//        binding.etEmail = findViewById(R.id.etEmail)
+//        binding.btnSignIn = findViewById(R.id.btnSignIn)
+//        binding.etPassword = findViewById(R.id.etPassword)
+        intent.let {
+            binding.etEmail.setText(it.getStringExtra("Email").toString())
+            binding.etPassword.setText(it.getStringExtra("Password").toString())
 
-        btnSignIn.setOnClickListener {
-            if(etEmail.text.toString().isEmpty()){
-                etEmail.error = "Enter Email"
-            }else if(etPassword.text.toString().isEmpty()){
-                etPassword.error = "Enter password"
-            }
-            else if(etPassword.text.toString().length < 6){
-                etPassword.error = "Enter at least 6 digit password"
-            }
-            else if (etPassword.text.toString()!=etPassword.text.toString()){
-                etPassword.error = "Password Mismatch"
-            }
-            else{
+        }
+            binding.btnSignIn.setOnClickListener {
                 Toast.makeText(this, "signin successful", Toast.LENGTH_SHORT).show()
             }
         }
 
     }
-}
