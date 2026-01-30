@@ -26,4 +26,6 @@
     <string name="projects">Projects</string>
     <string name="pnumber">600</string>
     <string name="followings">Followings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
