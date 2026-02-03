@@ -2,13 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="400dp"
     android:id="@+id/main"
     android:background="@color/black"
-    tools:context=".FirstFragment">
+    tools:context=".BlankFragment">
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/rg"
         android:orientation="horizontal"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp">
@@ -17,7 +18,7 @@
             android:layout_height= "wrap_content"
             android:text="Red"
             android:textColor="@color/white"
-            android:id="@+id/btnRed"
+            android:id="@+id/Red"
             android:textSize="20sp"
             android:layout_weight="1"/>
         <RadioButton
@@ -25,7 +26,7 @@
             android:layout_height= "wrap_content"
             android:text="Green"
             android:textColor="@color/white"
-            android:id="@+id/btnGreen"
+            android:id="@+id/Green"
             android:textSize="20sp"
             android:layout_weight="1"/>
         <RadioButton
@@ -33,7 +34,7 @@
             android:layout_height= "wrap_content"
             android:text="Blue"
             android:textColor="@color/white"
-            android:id="@+id/btnBlue"
+            android:id="@+id/Blue"
             android:textSize="20sp"
             android:layout_weight="1"/>
     </RadioGroup>

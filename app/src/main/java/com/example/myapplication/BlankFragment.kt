@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.myapplication.databinding.FragmentBlankBinding
 
+
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
@@ -46,18 +47,19 @@ class BlankFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        if(binding.btnRed.isSelected == true){
-
-        }else if(binding.btnBlue.isSelected == true){
-
-        }else if(binding.btnGreen.isSelected == true){
-
-        }else{
-
-        }
+        binding.rg.setOnCheckedChangeListener { group, checkedId->
+            when(checkedId) {
+                R.id.Red -> {
+                    fragmentActivity.colorchanger(R.color.red) }
+                R.id.Green-> {
+                    fragmentActivity.colorchanger(R.color.Green) }
+                R.id.Blue -> {
+                    fragmentActivity.colorchanger(R.color.Blue) }
+                else -> {
+                    fragmentActivity.colorchanger(R.color.white)}
+            }
+      
     }
-    companion object {
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
@@ -67,7 +69,6 @@ class BlankFragment : Fragment(){
          * @return A new instance of fragment BlankFragment.
          */
         // TODO: Rename and change types and number of parameters
-        @JvmStatic
         fun newInstance(param1: String, param2: String) =
             BlankFragment().apply {
                 arguments = Bundle().apply {

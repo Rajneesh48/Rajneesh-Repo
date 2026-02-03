@@ -10,8 +10,8 @@ import com.example.myapplication.databinding.ActivityFragmentBinding
 class FragmentActivity : AppCompatActivity() {
     lateinit var binding: ActivityFragmentBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityFragmentBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        binding = ActivityFragmentBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
